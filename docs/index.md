@@ -15,7 +15,7 @@
 
 ## :material-lightbulb: Motivation
 
-I once came across the fact that none of the Golang cache libraries are truly contention-free. All of them are just a standard map with mutex and some eviction policy. Unfortunately, these are not able to reach the speed of caches in other languages (such as [Caffeine](https://github.com/ben-manes/caffeine)). For example, the fastest cache from Dgraph labs called [Ristretto](https://github.com/dgraph-io/ristretto), which was faster than competitors by 30% at best (Otter is many times faster) and had a [disgusting hit ratio](https://github.com/dgraph-io/ristretto/issues/336) even though README says otherwise. This can be a problem in different applications because no one wants to bump the performance of a cache library and its bad hit ratio. As a result, I wanted to get the fastest, easiest-to-use cache with excellent hit ratio and support from the authors and Otter is designed to correct this unfortunate misunderstanding.
+I once came across the fact that none of the Go cache libraries are truly contention-free. Most of them are a map with a mutex and an eviction policy. Unfortunately, these are not able to reach the speed of caches in other languages (such as [Caffeine](https://github.com/ben-manes/caffeine)). For example, the fastest cache from Dgraph labs called [Ristretto](https://github.com/dgraph-io/ristretto), was faster than competitors by 30% at best (Otter is many times faster) but had [poor hit ratio](https://github.com/dgraph-io/ristretto/issues/336), even though its README says otherwise. This can be a problem in real-world applications, because no one wants to bump into performance of a cache library 🙂. As a result, I wanted to make the fastest, easiest-to-use cache with excellent hit ratio.
 
 ## :material-star-shooting: Features
 
@@ -24,7 +24,7 @@ I once came across the fact that none of the Golang cache libraries are truly co
 - **Generics**: You can safely use any comparable types as keys and any types as values
 - **TTL**: Expired values will be automatically deleted from the cache
 - **Cost-based eviction**: Otter supports eviction based on the cost of each item
-- **Excellent performance**: Otter is currently the fastest cache library with a huge lead over the [competition](https://github.com/maypok86/otter/blob/main/README.md#performance)
+- **Excellent throughput**: Otter is currently the fastest cache library with a huge lead over the [competition](https://github.com/maypok86/otter/blob/main/README.md#throughput)
 - **Great hit ratio**: New S3-FIFO algorithm is used, which shows excellent [results](https://github.com/maypok86/otter/blob/main/README.md#hit-ratio)
 
 ## :material-pencil: Example

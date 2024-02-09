@@ -1,5 +1,5 @@
 # Project information
-site_name: Otter Cache
+site_name: Otter
 site_url: https://maypok86.github.io/otter/
 site_author: Alexey Mayshev
 
@@ -120,4 +120,6 @@ markdown_extensions:
 nav:
   - Overview:
       - Overview: index.md
-      - Ask a question: https://github.com/maypok86/otter/discussions
+      - Ask a question: https://github.com/maypok86/otter/discussions/categories/q-a
+  - Performance:
+      - Throughput: performance/throughput.md
