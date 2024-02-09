@@ -123,3 +123,4 @@ nav:
       - Ask a question: https://github.com/maypok86/otter/discussions/categories/q-a
   - Performance:
       - Throughput: performance/throughput.md
+      - Hit ratio: performance/hit-ratio.md
