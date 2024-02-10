@@ -46,6 +46,6 @@ This trace is described as "references to a CODASYL database for a one hour peri
 
 ### Conclusion
 
-`S3-FIFO` (otter) is inferior to `W-TinyLFU` (theine) on lfu friendly traces (databases, search, analytics), but has a greater or equal hit ratio on web traces.
+`S3-FIFO` (otter) is inferior to `W-TinyLFU` (theine) on lfu friendly traces (databases, search, analytics) and has a greater or equal hit ratio on web traces. But it is still worth recognizing that `W-TinyLFU` is superior to `S3-FIFO` as a general-purpose eviction policy.
 
 In summary, we have that `S3-FIFO` is competitive with `W-TinyLFU` and `ARC`. Also, it provides a substantial improvement to `LRU` across a variety of traces.
