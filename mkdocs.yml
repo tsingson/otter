@@ -124,3 +124,4 @@ nav:
   - Performance:
       - Throughput: performance/throughput.md
       - Hit ratio: performance/hit-ratio.md
+      - Memory consumption: performance/memory-consumption.md
