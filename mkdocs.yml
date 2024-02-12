@@ -20,9 +20,13 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
+    - navigation.tracking
+    - navigation.instant
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
-    - navigation.sections
+    #- navigation.sections
+    - navigation.indexes
     - toc.follow
     - content.code.copy
     - content.tabs.link
@@ -121,6 +125,14 @@ nav:
   - Overview:
       - Overview: index.md
       - Ask a question: https://github.com/maypok86/otter/discussions/categories/q-a
+  - User guide:
+      - Getting started: user-guide/getting-started.md
+      - Features:
+          - user-guide/features/index.md
+          - Expiration policy: user-guide/features/expiration-policy.md
+          - Cost-based eviction: user-guide/features/cost.md
+          - Statistics: user-guide/features/stats.md
+  - API: api/index.md
   - Performance:
       - Throughput: performance/throughput.md
       - Hit ratio: performance/hit-ratio.md

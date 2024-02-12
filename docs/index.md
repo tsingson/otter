@@ -27,49 +27,6 @@ I once came across the fact that none of the Go cache libraries are truly conten
 - **Excellent throughput**: Otter is currently the fastest cache library with a huge lead over the [competition](https://github.com/maypok86/otter/blob/main/README.md#throughput)
 - **Great hit ratio**: New S3-FIFO algorithm is used, which shows excellent [results](https://github.com/maypok86/otter/blob/main/README.md#hit-ratio)
 
-## :material-pencil: Example
-
-```go
-package main
-
-import (
-    "fmt"
-    "time"
-
-    "github.com/maypok86/otter"
-)
-
-func main() {
-    // create a cache with capacity equal to 10000 elements
-    cache, err := otter.MustBuilder[string, string](10_000).
-        CollectStats().
-        Cost(func(key string, value string) uint32 {
-            return 1
-        }).
-        WithTTL(time.Hour).
-        Build()
-    if err != nil {
-        panic(err)
-    }
-
-    // set item with ttl (1 hour) 
-    cache.Set("key", "value")
-
-    // get value from cache
-    value, ok := cache.Get("key")
-    if !ok {
-        panic("not found key")
-    }
-    fmt.Println(value)
-
-    // delete item from cache
-    cache.Delete("key")
-
-    // delete data and stop goroutines
-    cache.Close()
-}
-```
-
 ## :material-handshake: Contribute
 
 Contributions are welcome as always, before submitting a new PR please make sure to open a new issue so community members can discuss it.
