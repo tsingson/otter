@@ -1,5 +1,7 @@
 # Hit ratio
 
+## Traditional traces
+
 ### Zipf
 
 ![zipf](https://raw.githubusercontent.com/maypok86/benchmarks/main/simulator/results/zipf.png)
@@ -40,11 +42,31 @@ This trace demonstrates a looping access pattern.
 
 ### OLTP
 
-This trace is described as "references to a CODASYL database for a one hour period.".
+This trace is described as "references to a CODASYL database for a one-hour period.".
 
 ![oltp](https://raw.githubusercontent.com/maypok86/benchmarks/main/simulator/results/oltp.png)
 
-### Conclusion
+## Modern traces
+
+### WikiCDN
+
+This [trace](https://wikitech.wikimedia.org/wiki/Analytics/Data_Lake/Traffic/Caching) was collected from Wikimedia's CDN system in 2019.
+
+![wikicdn](https://raw.githubusercontent.com/maypok86/benchmarks/main/simulator/results/wikicdn.png)
+
+### AlibabaBlock
+
+This [trace](https://github.com/alibaba/block-traces) was collected from a cluster in production of the elastic block service of Alibaba Cloud (i.e. storage for virtual disks) in 2020.
+
+![alibabablock](https://raw.githubusercontent.com/maypok86/benchmarks/main/simulator/results/alibabablock.png)
+
+### Twitter
+
+This [trace](https://github.com/twitter/cache-trace) was collected from Twitter's in-memory caching ([Twemcache](https://github.com/twitter/twemcache)/[Pelikan](https://github.com/twitter/pelikan)) clusters in 2020.
+
+![twitter](https://raw.githubusercontent.com/maypok86/benchmarks/main/simulator/results/twitter.png)
+
+## Conclusion
 
 `S3-FIFO` (otter) is inferior to `W-TinyLFU` (theine) on lfu friendly traces (databases, search, analytics) and has a greater or equal hit ratio on web traces. But it is still worth recognizing that `W-TinyLFU` is superior to `S3-FIFO` as a general-purpose eviction policy.
 
