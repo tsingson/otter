@@ -6,6 +6,12 @@ These benchmarks use pre-generated strings as keys and values, i.e., each key-va
 
 The source code can be found [here](https://github.com/maypok86/benchmarks/blob/main/memory/main.go), and the results in text form [here](https://github.com/maypok86/benchmarks/blob/main/memory/results/memory.txt).
 
+### Capacity (1000)
+
+In this benchmark, the cache capacity is 1000 elements.
+
+![memory_1000](https://raw.githubusercontent.com/maypok86/benchmarks/main/memory/results/memory_1000.png)
+
 ### Capacity (10000)
 
 In this benchmark, the cache capacity is 10000 elements.
@@ -32,6 +38,6 @@ In this benchmark, the cache capacity is 1000000 elements.
 
 ### Conclusion
 
-At small cache sizes, the buffers used in otter slightly worsen memory consumption, but as the cache size increases, the per entry overhead affects memory consumption much more, which is why otter starts to show great results.
+Otter just shows good results at all capacities, even despite the use of additional buffers.
 
-Also, ristretto's performance is questionable, as its per entry overhead is quite high. This is most likely caused by the bloom filter used in it, which rejects a lot of items in advance, or it is another consequence of a bug that causes poor hit ratio.
+Please note that in reality, ristretto is likely to use less RAM than the rest of the caches. This is achieved thanks to a dirty hack, due to which ristretto does not store keys at all and replaces them with two hashes.

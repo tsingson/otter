@@ -44,4 +44,4 @@ In this [benchmark](https://github.com/maypok86/benchmarks/blob/main/throughput/
 
 ### Conclusion
 
-Otter shows fantastic speed under all workloads except extreme write-heavy, but such a workload is very rare for caches and usually indicates that the cache has a very small hit ratio.
+Otter shows fantastic speed under all workloads except extreme write-heavy, but such a workload is rare for caches and usually indicates that the cache has a very small hit ratio.
