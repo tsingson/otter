@@ -209,6 +209,7 @@ Below is a list of known projects that use Otter:
 - [FrankenPHP](https://github.com/php/frankenphp): The modern PHP app server.
 - [Unkey](https://github.com/unkeyed/unkey): Open source API management platform.
 - [Nuclei](https://github.com/projectdiscovery/nuclei): A fast, open-source, and highly customizable vulnerability scanner.
+- [git-pages](https://codeberg.org/git-pages/git-pages): Scalable static page server for Git forges (like GitHub Pages or Netlify).
 
 ## 🗃 Related works <a id="related-works" />
 
